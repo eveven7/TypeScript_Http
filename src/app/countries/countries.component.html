@@ -1,0 +1,11 @@
+<fieldset *ngFor="let one_country of country | async" 
+routerLink="/country/{{ one_country.region }}">
+    
+<legend>{{ one_country.name }}</legend>
+    <dl>
+        <dt>Region</dt>
+        <dl>{{ one_country.region }}</dl>
+        <dt>Area</dt>
+        <dl>{{ one_country.area }}</dl>
+    </dl>
+</fieldset>
