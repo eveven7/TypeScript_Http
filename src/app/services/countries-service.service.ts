@@ -9,6 +9,6 @@ export class CountriesServiceService {
 
   constructor(private httpClient: HttpClient) { }
   load() { return this.httpClient.get<Countries[]>('https://restcountries.com/v2/all?fields=name,region,area'); }
-  loadCountriesDetails() { return this.httpClient.get<Countries[]>('https://restcountries.com/v2/all?fields=name,region,area' + region); }
+  // loadCountriesDetails() { return this.httpClient.get<Countries[]>('https://restcountries.com/v2/all?fields=name,region,area' + region); }
 
 }

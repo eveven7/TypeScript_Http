@@ -18,9 +18,10 @@ export class CountriesComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe((data) => { 
-      this.country = this.countriesServiceService.load();
-      
-    });
+    // this.activatedRoute.paramMap.subscribe((data) => { 
+    //   this.country = this.countriesServiceService.load();
+      // this.countriesServiceService.load().subscribe(console.log); 
+      console.log("something");  
+     };
 
-}}
+}
