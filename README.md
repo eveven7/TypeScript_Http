@@ -1,3 +1,9 @@
+
+Use HttpClient in the service to load data
+(https://restcountries.com/v2/all?fields=name,region,area)
+Use AsyncPipe in the HTML to subscribe to that observable and show them in the template.
+Fetch each Country in a Component based on the route name.
+
 # Countries
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
