@@ -4,9 +4,8 @@ export interface Countries {
 }
 
 
-export interface CountriesDetailed extends Countries {
+export interface Regions extends Countries {
     region: string;
-    area: number;
-    independent: boolean;
+
 }
 
