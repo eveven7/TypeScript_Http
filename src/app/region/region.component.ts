@@ -19,10 +19,10 @@ export class RegionComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.regionsServiceService.getRegions().subscribe(console.log);
+    // this.regionsServiceService.getRegions().subscribe(console.log);
 
     this.activatedRoute.paramMap.subscribe((data) => {
-      this.region = this.regionsServiceService.getRegion(data.get('name') || '');
+      this.region = this.regionsServiceService.getRegion(data.get('name') || '').subscribe(console.log);
     });
 
   }

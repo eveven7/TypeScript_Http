@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { find } from 'rxjs';
-import {  Regions } from '../types';
+import { find, map } from 'rxjs';
 import { CountriesServiceService } from './countries-service.service';
 @Injectable({
   providedIn: 'root'
@@ -9,11 +8,13 @@ import { CountriesServiceService } from './countries-service.service';
 export class RegionsServiceService {
   constructor(private httpClient: HttpClient, private countriesService: CountriesServiceService) { }
 
-  
+
   getRegions() {
     return this.countriesService.loadCountriesRegion();
   }
-  getRegion(region: string) {
-    return this.countriesService.loadCountriesRegion().pipe(find(([country]) => country.region == region));
+  getRegion(name: string) {
+    return this.countriesService.loadCountriesRegion().pipe(map((data) => {
+      data.find((country) => country.name == name)
+    }))
   }
 }
