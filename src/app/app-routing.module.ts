@@ -5,9 +5,10 @@ import { RegionComponent } from './region/region.component';
 
 const routes: Routes = [
   { path: 'countries', component: CountriesComponent },
-  { path: 'country/:country', component: RegionComponent },
-
+  { path: 'country/:country', component: CountriesComponent },
   { path: 'regions/:region', component: RegionComponent },
+
+  { path: 'regions', component: RegionComponent },
 
 ];
 

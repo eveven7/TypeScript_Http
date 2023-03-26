@@ -6,6 +6,8 @@ export interface Countries {
 
 export interface Regions extends Countries {
     region: string;
+    independent: boolean;
+    area: number;
 
 }
 

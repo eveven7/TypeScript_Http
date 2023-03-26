@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./region.component.css']
 })
 export class RegionComponent implements OnInit {
-  country$?: Observable<Regions>
+  country$?: Observable<Regions[]>
   region: any = [];
   regions: any = [];
 
@@ -19,11 +19,22 @@ export class RegionComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    // this.regionsServiceService.getRegions().subscribe(console.log);
 
     this.activatedRoute.paramMap.subscribe((data) => {
-      this.region = this.regionsServiceService.getRegion(data.get('name') || '').subscribe(console.log);
+
+      // this.countriesServiceService.load().subscribe(console.log); 
+      if (data.get("region") == null) {
+        this.regionsServiceService.getRegions().subscribe((region) => {
+          this.regions.push(region)
+        });
+      } else {
+        this.country$ = this.regionsServiceService.getRegion(data.get("region") || '')
+      }
     });
+
+    // this.activatedRoute.paramMap.subscribe((data) => {
+    //   this.region = this.regionsServiceService.getRegion(data.get('name') || '').subscribe(console.log);
+    // });
 
   }
 }

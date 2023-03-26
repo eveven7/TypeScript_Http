@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CountriesServiceService } from '../services/countries-service.service';
-import { Countries } from '../types';
+import { RegionsServiceService } from '../services/regions-service.service';
+import { Countries, Regions } from '../types';
 
 @Component({
   selector: 'app-countries',
@@ -11,17 +12,24 @@ import { Countries } from '../types';
 })
 export class CountriesComponent implements OnInit {
 
-  country: Observable<Countries[]>;
-  
-  constructor(private countriesServiceService: CountriesServiceService,private activatedRoute: ActivatedRoute) {
-    this.country = this.countriesServiceService.load();
+  country?: Observable<Countries[]>;
+  name?: Observable<Regions|undefined>;
+
+  constructor(private countriesServiceService: CountriesServiceService, private activatedRoute: ActivatedRoute, private regionsServiceService: RegionsServiceService) {
 
   }
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe((data) => { 
-      this.country = this.countriesServiceService.load();
+    this.activatedRoute.paramMap.subscribe((data) => {
       // this.countriesServiceService.load().subscribe(console.log); 
+      if (data.get("country") == null) {
+        this.country = this.countriesServiceService.load();
+      } else {
+        this.name = this.regionsServiceService.getCountry(data.get("country") || '')
      
-     });
+      }
+    });
 
-}}
+
+
+  }
+}
