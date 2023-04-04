@@ -29,7 +29,8 @@ import {MatTooltipModule} from '@angular/material/tooltip'
     BrowserAnimationsModule,
     CommonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

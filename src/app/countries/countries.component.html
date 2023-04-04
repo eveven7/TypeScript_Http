@@ -4,7 +4,8 @@
     
    
     <div  >{{ one_country.name }}</div>
- 
+    <app-favorites (clickedFavorite)="addToFavorite()" [isFavorite]="isFavorite"></app-favorites>
+
 </div>
 </div>
 <div >

@@ -13,24 +13,26 @@ import { Countries, Regions } from '../types';
 export class CountriesComponent implements OnInit {
 
   country?: Observable<Countries[]>;
-  name?: Observable<Regions|undefined>;
+  name?: Observable<Regions | undefined>;
 
   constructor(private countriesServiceService: CountriesServiceService, private activatedRoute: ActivatedRoute, private regionsServiceService: RegionsServiceService) {
 
   }
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((data) => {
-      // this.countriesServiceService.load().subscribe(console.log); 
       if (data.get("country") == null) {
         this.country = this.countriesServiceService.load();
       } else {
         this.name = this.regionsServiceService.getCountry(data.get("country") || '')
-     
+
       }
     });
+  }
 
-   
+  isFavorite = false;
+  addToFavorite() {
+    this.isFavorite = !this.isFavorite;
+  }
 
-  } 
 
 }
