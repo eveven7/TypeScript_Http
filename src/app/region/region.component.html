@@ -1,14 +1,14 @@
 <section class="regions">
   <h2>Browse by Region</h2>
-  <ul>
-    <li *ngFor="let region of regions">
-      <a routerLink="/regions/{{region}}">{{region}}</a>
+  <ul class="now">
+    <li class="country-card" *ngFor="let region of regions">
+      <a class="" routerLink="/regions/{{region}}">{{region}}</a>
     </li>
   </ul>
 </section>
-<section class="trending-now">
-  <div class="trending-now-container">
-    <div class="trending-now-item" *ngFor="let country of country$ | async">
+<section >
+  <div >
+    <div class="card-item" *ngFor="let country of country$ | async">
       <a routerLink="/country/{{country.name}}">{{ country.name }}</a>
         </div>
   </div>

@@ -1,0 +1,158 @@
+.favorite-icon {
+    color: var(--lighter);
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: 16px;
+    height: 16px;
+
+    mat-icon {
+        width: 16px;
+        height: 16px;
+        z-index: 1;
+    }
+
+    &.medium {
+        width: 24px;
+        height: 24px;
+
+        mat-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &.big {
+        width: 36px;
+        height: 36px;
+
+        mat-icon {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    &:not(.favorite):hover {
+        color: var(--white);
+    }
+
+    .hearts {
+        position: absolute;
+        height: 200%;
+        width: 200%;
+        left: -50%;
+        top: -50%;
+        overflow: visible;
+    }
+
+    .left-hearts>*,
+    .right-hearts>* {
+        opacity: 0;
+        transition: 0.2s ease;
+    }
+
+    &.favorite {
+        color: var(--primary);
+
+        &::before,
+        &::after {
+            content: "";
+            display: grid;
+            border-radius: 100%;
+            position: absolute;
+            outline: 5px solid var(--primary);
+            height: 200%;
+            width: 200%;
+            left: -50%;
+            top: -50%;
+            animation: scalePulse 0.5s cubic-bezier(0.12, 0.84, 0.5, 0.44) forwards;
+        }
+
+        &::after {
+            opacity: 1;
+            transform: scale(0);
+            animation-delay: 0.2s;
+        }
+
+        .left-hearts>*,
+        .right-hearts>* {
+            transform-origin: center center;
+            animation: floatingHearts 0.65s cubic-bezier(0.12, 0.84, 0.5, 0.44) forwards;
+        }
+
+        .right-hearts {
+            g:first-child {
+                animation-delay: 0.3s;
+            }
+
+            g:last-child {
+                animation-delay: 0.1s;
+            }
+        }
+
+        .left-hearts {
+            g:first-child {
+                animation-delay: 0.2s;
+            }
+
+            g:last-child {
+                animation-delay: 0.5s;
+            }
+        }
+    }
+
+    &:not(.favorite) {
+        mat-icon {
+            animation: shake .4s;
+        }
+    }
+
+    @keyframes floatingHearts {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+    }
+
+    @keyframes scalePulse {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1.1);
+            opacity: 0;
+        }
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translateX(0) rotate(0deg);
+        }
+
+        30% {
+            transform: translateX(-2px) rotate(-2deg);
+        }
+
+        60% {
+            transform: translateX(2px) rotate(2deg);
+        }
+
+        90% {
+            transform: translateX(-1px) rotate(-2deg);
+        }
+
+        100% {
+            transform: translateX(0) rotate(0deg);
+        }
+    }
+}

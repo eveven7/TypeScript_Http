@@ -1,10 +1,20 @@
-<fieldset *ngFor="let one_country of country | async" routerLink="/country/{{ one_country.name }}">
-    <legend>{{ one_country.name }}</legend>
-</fieldset>
+<div class="now" >
+    
+<div class="country-card" *ngFor="let one_country of country | async" routerLink="/country/{{ one_country.name }}">
+    
+   
+    <div  >{{ one_country.name }}</div>
+ 
+</div>
+</div>
+<div >
+    <div  style="background-image:url('assets/asia.png');background-size:cover"> </div>
+<div  *ngIf="name | async as country">  {{ country.name }} <div>
+    Country Area: {{ country.area }} 
 
-<div *ngIf="name | async as country"> {{ country.area }} {{ country.name }}
 
-    <div *ngIf="country.independent == true"> independent </div>
-    <div *ngIf="country.independent == false"> dependent </div>
+    <div  *ngIf="country.independent == true"> Independent </div>
+    <div *ngIf="country.independent == false"> Dependent </div>
 
+</div>
 </div>
