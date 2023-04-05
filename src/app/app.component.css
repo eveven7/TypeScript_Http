@@ -4,18 +4,19 @@ h2 {
   }
   li{    
     list-style-type: none;
-
-
+  display: inline-block;
+  padding: 18px;
   }
   
+
+
   a {
-    background-color: #3f525c;
-    border-radius: 2px;
+
     padding: 1rem;
     font-size: 1.2rem;
     text-decoration: none;
     display: inline-block;
-    color: #fff;
+    color: black;
     text-align: center;
     width: 100%;
     min-width: 70px;
@@ -30,11 +31,10 @@ h2 {
   
   @media (min-width: 600px) {
     a {
-      width: 18%;
       box-sizing: content-box;
     }
   }
   
   a:hover {
-    background-color: #000;
+    color: red;
   }

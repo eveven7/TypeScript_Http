@@ -1,3 +1,5 @@
+<h2>Countries list</h2>
+
 <div class="now">
     <div class="country-card" *ngFor="let one_country of country | async">
         <button routerLink="/country/{{ one_country.name }}">
@@ -14,7 +16,6 @@
 
     </div>
 </div>
-
 
 
 <div class="country-card">
