@@ -13,4 +13,6 @@ export class CountriesServiceService {
   loadCountriesRegion() {
     return this.httpClient.get<Regions[]>('https://restcountries.com/v2/all?fields=name,region,area');}
      
+
+    
 }

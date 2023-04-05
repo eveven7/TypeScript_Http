@@ -1,21 +1,29 @@
-<div class="now" >
-    
-<div class="country-card" *ngFor="let one_country of country | async" routerLink="/country/{{ one_country.name }}">
-    
-   
-    <div  >{{ one_country.name }}</div>
-    <app-favorites (clickedFavorite)="addToFavorite()" [isFavorite]="isFavorite"></app-favorites>
+<div class="now">
+    <div class="country-card" *ngFor="let one_country of country | async">
+        <button routerLink="/country/{{ one_country.name }}">
 
+
+            <div>{{ one_country.name }}
+
+            </div>
+
+
+        </button>
+
+        <app-favorites (clickedFavorite)="addToFavorite()" [isFavorite]="isFavorite"></app-favorites>
+
+    </div>
 </div>
-</div>
-<div >
-    <div  style="background-image:url('assets/asia.png');background-size:cover"> </div>
-<div  *ngIf="name | async as country">  {{ country.name }} <div>
-    Country Area: {{ country.area }} 
 
 
-    <div  *ngIf="country.independent == true"> Independent </div>
-    <div *ngIf="country.independent == false"> Dependent </div>
 
-</div>
+<div class="country-card">
+    <div *ngIf="name | async as country"> <h2>{{ country.name }}</h2>  <div>
+         Area: {{ country.area }} 
+
+
+            <div *ngIf="country.independent == true"> Independent </div>
+            <div *ngIf="country.independent == false"> Dependent </div>
+
+        </div>
 </div>

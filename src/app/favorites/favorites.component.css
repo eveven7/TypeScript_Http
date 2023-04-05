@@ -1,14 +1,12 @@
-/* .favorite-icon {
-    color: var(--lighter);
-    position: relative;
-    display: grid;
+.favorite-icon {
+    color: #7FFFD4;
     place-content: center;
-    width: 16px;
-    height: 16px;
+    width: 50px;
+    height: 50px;
 
     mat-icon {
-        width: 16px;
-        height: 16px;
+        width: 24px;
+        height: 24px;
         z-index: 1;
     }
 
@@ -33,13 +31,13 @@
     }
 
     &:not(.favorite):hover {
-        color: var(--white);
+        color:  #7FFFD4;
     }
 
     .hearts {
         position: absolute;
-        height: 200%;
-        width: 200%;
+        height: 500%;
+        width: 500%;
         left: -50%;
         top: -50%;
         overflow: visible;
@@ -51,8 +49,8 @@
         transition: 0.2s ease;
     }
 
-    &.favorite {
-        color: var(--primary);
+    .favorite {
+        color: green;
 
         &::before,
         &::after {
@@ -60,7 +58,7 @@
             display: grid;
             border-radius: 100%;
             position: absolute;
-            outline: 5px solid var(--primary);
+            outline: 5px solid green;
             height: 200%;
             width: 200%;
             left: -50%;
@@ -155,4 +153,4 @@
             transform: translateX(0) rotate(0deg);
         }
     }
-} */
+}
