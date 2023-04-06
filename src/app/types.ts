@@ -1,6 +1,6 @@
 export interface Countries {
     name: string;
-
+id: number;
 }
 
 
@@ -14,14 +14,4 @@ export interface Regions extends Countries {
 }
 
 
-export class country {
-    constructor(
-        public name: string,
-
-        public region: string,
-        public independent: boolean,
-        public area: number
-
-    ) { }
-}
 

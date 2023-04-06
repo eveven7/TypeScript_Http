@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FavoritesService } from '../services/favorites.service';
-import { Countries, country } from '../types';
+import { Countries } from '../types';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,13 +8,22 @@ import { Observable } from 'rxjs';
   templateUrl: './favorite-list.component.html',
   styleUrls: ['./favorite-list.component.css']
 })
-export class FavoriteListComponent implements OnInit {
-  countries$!: Observable<Countries>;
+export class FavoriteListComponent implements OnInit, OnChanges {
+  countries$!: Observable<Countries[]>;
 
   constructor(private favoriteService: FavoritesService) {
   }
 
   ngOnInit(): void {
-   this.countries$ = this.favoriteService.addFavorites(new country('test', 'test', true, 1111));
+    this.countries$ = this.favoriteService.getFavorites();
   }
+  ngOnChanges(): void {
+    this.countries$ = this.favoriteService.getFavorites();
+  }
+
+  delete(
+    id: number
+  ) {
+    this.favoriteService.deleteFavorites(id).subscribe();
+  };
 }

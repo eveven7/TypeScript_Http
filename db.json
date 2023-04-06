@@ -1,18 +1,21 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Andorra",
+      "region": "Europe",
+      "area": 468,
+      "independent": false,
+      "id": 15
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Angola",
+      "region": "Africa",
+      "area": 1246700,
+      "independent": false,
+      "id": 16
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

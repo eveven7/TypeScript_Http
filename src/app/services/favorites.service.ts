@@ -12,8 +12,11 @@ export class FavoritesService {
     return this.httpClient.post<Countries>('/api/posts', countries);
   }
 
-  getFavorites(countries: Countries) {
-    return this.httpClient.get<Countries>('/api/posts');
+  getFavorites() {
+    return this.httpClient.get<Countries[]>('/api/posts');
+  }
+  deleteFavorites(id: number){
+    return this.httpClient.delete<Countries>('/api/posts/' + id);
   }
 }
 

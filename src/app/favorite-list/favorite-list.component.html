@@ -1,7 +1,12 @@
  <div *ngFor="let country of countries$ | async">
+
+
+  <h2> {{country.name}}</h2>
+
+  <a (click)="delete(country.id)"> Delete</a>
+</div>
+
+
   <!-- <app-countries
     [countries]="countries"
   ></app-countries> -->
-
-  <h2> {{country.name}}</h2>
-</div>

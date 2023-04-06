@@ -1,33 +1,34 @@
 <h2>Countries list</h2>
+<app-favorite-list></app-favorite-list>
 
 <div class="now">
-    <div class="country-card" *ngFor="let one_country of country | async">
-        <button routerLink="/country/{{ one_country.name }}">
+  <div class="country-card" *ngFor="let one_country of country | async">
+    <button routerLink="/country/{{ one_country.name }}">
 
 
-            <div>{{ one_country.name }}
+      <div>{{ one_country.name }}
 
-            </div>
+      </div>
 
 
-        </button>
+    </button>
 
-        <app-favorites (clickedFavorite)="addToFavorite()" [isFavorite]="isFavorite"></app-favorites>
+    <app-favorites  [isFavorite]="isFavorite"
+      [country]="one_country"> </app-favorites>
 
-    </div>
-    <app-favorite-list></app-favorite-list>
+  </div>
 </div>
 
 
 <div class="country-card">
-    <div *ngIf="name | async as country"> <h2>{{ country.name }}</h2>  <div>
-         Area: {{ country.area }}
+  <div *ngIf="name | async as country">
+    <h2>{{ country.name }}</h2>
+    <div>
+      Area: {{ country.area }}
 
 
-            <div *ngIf="country.independent == true"> Independent </div>
-            <div *ngIf="country.independent == false"> Dependent </div>
+      <div *ngIf="country.independent == true"> Independent </div>
+      <div *ngIf="country.independent == false"> Dependent </div>
 
-        </div>
-</div>
-
-
+    </div>
+  </div>
