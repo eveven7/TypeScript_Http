@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon'
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     CountriesComponent,
     RegionComponent,
     FavoritesComponent,
-    
-    
-    
+    FavoriteListComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     CommonModule,
     MatIconModule,
     MatTooltipModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

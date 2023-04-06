@@ -1,5 +1,7 @@
-<!-- <div *ngFor="let countries of countries">
-    <app-countries
+ <div *ngFor="let country of countries$ | async">
+  <!-- <app-countries
     [countries]="countries"
-  ></app-countries>
-  </div> -->
+  ></app-countries> -->
+
+  <h2> {{country.name}}</h2>
+</div>

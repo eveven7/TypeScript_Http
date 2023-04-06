@@ -15,12 +15,13 @@
         <app-favorites (clickedFavorite)="addToFavorite()" [isFavorite]="isFavorite"></app-favorites>
 
     </div>
+    <app-favorite-list></app-favorite-list>
 </div>
 
 
 <div class="country-card">
     <div *ngIf="name | async as country"> <h2>{{ country.name }}</h2>  <div>
-         Area: {{ country.area }} 
+         Area: {{ country.area }}
 
 
             <div *ngIf="country.independent == true"> Independent </div>
@@ -28,3 +29,5 @@
 
         </div>
 </div>
+
+

@@ -13,7 +13,7 @@ export class FavoritesService {
   }
 
   getFavorites(countries: Countries) {
-    return this.httpClient.get<Countries>('/api/posts', countries);
+    return this.httpClient.get<Countries>('/api/posts');
   }
 }
 

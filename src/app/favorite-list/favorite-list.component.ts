@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FavoritesService } from '../services/favorites.service';
-import { Countries } from '../types';
+import { Countries, country } from '../types';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-favorite-list',
@@ -8,12 +9,12 @@ import { Countries } from '../types';
   styleUrls: ['./favorite-list.component.css']
 })
 export class FavoriteListComponent implements OnInit {
-  @Input() countries: Countries[]  = [];
+  countries$!: Observable<Countries>;
 
   constructor(private favoriteService: FavoritesService) {
-    this.countries = [];
   }
+
   ngOnInit(): void {
-    this.countries = this.favoriteService.getFavorites();
+   this.countries$ = this.favoriteService.addFavorites(new country('test', 'test', true, 1111));
   }
 }

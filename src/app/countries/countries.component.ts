@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CountriesServiceService } from '../services/countries-service.service';
 import { RegionsServiceService } from '../services/regions-service.service';
-import { Countries, Regions } from '../types';
+import { Countries, Regions, country } from '../types';
+import { FavoritesService } from '../services/favorites.service';
 
 @Component({
   selector: 'app-countries',
@@ -11,11 +12,12 @@ import { Countries, Regions } from '../types';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
+  countries$!: Observable<Countries>;
 
   country?: Observable<Countries[]>;
   name?: Observable<Regions | undefined>;
 
-  constructor(private countriesServiceService: CountriesServiceService, private activatedRoute: ActivatedRoute, private regionsServiceService: RegionsServiceService) {
+  constructor(private favoriteService: FavoritesService, private countriesServiceService: CountriesServiceService, private activatedRoute: ActivatedRoute, private regionsServiceService: RegionsServiceService) {
 
   }
   ngOnInit(): void {
@@ -31,7 +33,9 @@ export class CountriesComponent implements OnInit {
 
   isFavorite = false;
   addToFavorite() {
-    this.isFavorite = !this.isFavorite;
+    // console.log("test");
+
+    this.countries$ = this.favoriteService.addFavorites(new country('test', 'test', true, 1111));
   }
 
 
