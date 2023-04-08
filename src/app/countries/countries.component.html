@@ -1,23 +1,17 @@
 <h2>Countries list</h2>
-<app-favorite-list></app-favorite-list>
+
+<!-- <app-search (filterChange)="filterCountries($event)"></app-search> -->
 
 <div class="now">
   <div class="country-card" *ngFor="let one_country of country | async">
-    <button routerLink="/country/{{ one_country.name }}">
-
-
-      <div>{{ one_country.name }}
-
+    <button routerLink="/country/{{ one_country.name  }}">
+      <div>{{ one_country.name}}
       </div>
-
-
     </button>
-
-    <app-favorites  [isFavorite]="isFavorite"
-      [country]="one_country"> </app-favorites>
-
+    <app-favorites class="favorite" [isFavorite]="isFavorite" [country]="one_country"> </app-favorites>
   </div>
 </div>
+
 
 
 <div class="country-card">
@@ -25,10 +19,7 @@
     <h2>{{ country.name }}</h2>
     <div>
       Area: {{ country.area }}
-
-
       <div *ngIf="country.independent == true"> Independent </div>
       <div *ngIf="country.independent == false"> Dependent </div>
-
     </div>
-  </div>
+</div>

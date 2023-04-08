@@ -6,15 +6,3 @@
     </li>
   </ul>
 </section>
-<section>
-
-  <div>
-
-    <li *ngFor="let region of regions">
-      <h2 class=""> Region {{region}}</h2>
-    </li>
-    <div class="card-item" *ngFor="let country of country$ | async">
-      <a routerLink="/country/{{country.name}}">{{ country.name }}</a>
-    </div>
-  </div>
-</section>

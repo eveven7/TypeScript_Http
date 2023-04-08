@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { CountriesServiceService } from '../services/countries-service.service';
 import { RegionsServiceService } from '../services/regions-service.service';
 import { Countries, Regions } from '../types';
@@ -12,7 +12,7 @@ import { FavoritesService } from '../services/favorites.service';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
-  countries$!: Observable<Countries>;
+  countries$!: Observable<Countries[]>;
 
   country?: Observable<Countries[]>;
   name?: Observable<Regions | undefined>;
@@ -33,6 +33,14 @@ export class CountriesComponent implements OnInit {
 
   isFavorite = false;
 
-
+  // filterCountries(filter: string) {
+  //   // console.log(filter);
+  //   this.country = this.countriesServiceService
+  //     // this.countriesServiceService
+  //     .findCountryByTitle(filter)
+  //     .pipe(
+  //       tap((country) => { console.log(country); })
+  //     )
+  // }
 
 }

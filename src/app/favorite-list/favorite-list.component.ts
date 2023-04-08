@@ -15,7 +15,7 @@ export class FavoriteListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.countries$ = this.favoriteService.getFavorites();
+    this.get();
   }
   ngOnChanges(): void {
     this.countries$ = this.favoriteService.getFavorites();
@@ -25,5 +25,13 @@ export class FavoriteListComponent implements OnInit, OnChanges {
     id: number
   ) {
     this.favoriteService.deleteFavorites(id).subscribe();
+
+    this.get();
   };
+  get() {
+    this.countries$ = this.favoriteService.getFavorites();
+
+  }
+
+
 }

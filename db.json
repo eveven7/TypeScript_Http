@@ -5,14 +5,56 @@
       "region": "Europe",
       "area": 468,
       "independent": false,
-      "id": 15
+      "id": 39
     },
     {
-      "name": "Angola",
-      "region": "Africa",
-      "area": 1246700,
+      "name": "Anguilla",
+      "region": "Americas",
+      "area": 91,
       "independent": false,
-      "id": 16
+      "id": 40
+    },
+    {
+      "name": "Afghanistan",
+      "region": "Asia",
+      "area": 652230,
+      "independent": false,
+      "id": 41
+    },
+    {
+      "name": "Afghanistan",
+      "region": "Asia",
+      "area": 652230,
+      "independent": false,
+      "id": 42
+    },
+    {
+      "name": "Afghanistan",
+      "region": "Asia",
+      "area": 652230,
+      "independent": false,
+      "id": 43
+    },
+    {
+      "name": "Afghanistan",
+      "region": "Asia",
+      "area": 652230,
+      "independent": false,
+      "id": 44
+    },
+    {
+      "name": "Australia",
+      "region": "Oceania",
+      "area": 7692024,
+      "independent": false,
+      "id": 45
+    },
+    {
+      "name": "Cameroon",
+      "region": "Africa",
+      "area": 475442,
+      "independent": false,
+      "id": 46
     }
   ],
   "comments": [],

@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon'
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
+import { SearchComponent } from './search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FavoriteListComponent } from './favorite-list/favorite-list.component';
     CountriesComponent,
     RegionComponent,
     FavoritesComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
+    SearchComponent,
+
 
 
   ],
@@ -32,7 +36,7 @@ import { FavoriteListComponent } from './favorite-list/favorite-list.component';
     CommonModule,
     MatIconModule,
     MatTooltipModule,
-
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 export interface Countries {
     name: string;
 id: number;
+area: number;
+
 }
 
 

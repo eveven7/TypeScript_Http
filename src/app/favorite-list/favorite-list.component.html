@@ -1,11 +1,14 @@
- <div *ngFor="let country of countries$ | async">
+<div class="now">
+
+
+ <div  class="country-card" *ngFor="let country of countries$ | async">
 
 
   <h2> {{country.name}}</h2>
 
-  <a (click)="delete(country.id)"> Delete</a>
+  <button (click)="delete(country.id)"> Delete</button>
 </div>
-
+</div>
 
   <!-- <app-countries
     [countries]="countries"

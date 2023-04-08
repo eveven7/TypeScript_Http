@@ -1,0 +1,21 @@
+.country-card {
+  max-width: 300px;
+  margin: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 200px;
+  height: 150px;
+
+}
+.position
+{
+    margin-left: 30vmax;
+    margin-top: 10vmax;
+}
+
+.now
+{
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
